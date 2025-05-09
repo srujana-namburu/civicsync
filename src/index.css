@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 225 91% 59%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --accent: 35 92% 50%;
+    --accent-foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 225 91% 59%;
+    
+    --radius: 1.0rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 214 94% 68%;
+    --primary-foreground: 222 47% 11%;
+    
+    --secondary: 158 84% 52%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --accent: 43 96% 56%;
+    --accent-foreground: 222 47% 11%;
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --destructive: 0 62.8% 71.8%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 214 94% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border transition-colors duration-200;
+  }
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  /* Card styles */
+  .card-harmony {
+    @apply bg-card text-card-foreground rounded-lg border shadow-card
+    transition-all duration-300 hover:shadow-card-hover;
+  }
+  
+  /* Button styles with pill shape */
+  .btn-harmony {
+    @apply rounded-full transition-all duration-200 font-medium
+    hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  /* Status badge styles */
+  .status-badge.pending {
+    @apply bg-civic-amber/15 text-civic-amber dark:bg-civic-amber-dark/15 dark:text-civic-amber-dark;
+  }
+  .status-badge.in-progress {
+    @apply bg-civic-blue/15 text-civic-blue dark:bg-civic-blue-dark/15 dark:text-civic-blue-dark;
+  }
+  .status-badge.resolved {
+    @apply bg-civic-green/15 text-civic-green dark:bg-civic-green-dark/15 dark:text-civic-green-dark;
+  }
+
+  /* Animations */
+  .animate-hover-lift {
+    @apply transition-transform duration-300 hover:translate-y-[-4px];
+  }
+  
+  /* Glass effect for dropdowns and modals */
+  .glass-effect {
+    @apply bg-background/90 backdrop-blur-md border border-border/50 dark:bg-background/80 shadow-md;
+  }
+
+  /* New animations */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Confetti animation for vote milestones */
+  .confetti {
+    @apply fixed w-2 h-2 rounded-full pointer-events-none z-50;
+    animation: confetti-fall 2s ease-in-out forwards;
+  }
+
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-50px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
