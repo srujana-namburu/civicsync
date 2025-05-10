@@ -12,7 +12,6 @@ Design and implement a fullstack application with proper authentication and auth
 - Visualize status/category-wise issue breakdowns and voting trends.
 - Interact with both list-based and map-based representations of issues.
 
-
 ## 👥 User Role
 There is a single role in this application: a citizen user. However, the actions available to a user are based on ownership and issue status.
 
