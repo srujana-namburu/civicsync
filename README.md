@@ -41,7 +41,7 @@ Each user has access to a "My Issues" dashboard:
 - Shows a list of their submitted issues.
 - Allows editing or deleting if the issue status is still Pending.
 - Displays current vote count and status.
-- Clickable to open issue details.
+- Clickable to open issue details
 
 ### 3. Public Issue Feed
 A globally visible, paginated list showing all reported issues:
